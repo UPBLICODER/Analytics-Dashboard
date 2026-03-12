@@ -22,14 +22,6 @@
 - Basic login page and routing with React Router
 
 ---
-### Test User
-
-You can use the following test user to log in to the dashboard:
-
-- **Username:** test  
-- **Password:** test@12
-
----
 ## Getting Started (Local)
 
 ### Backend
