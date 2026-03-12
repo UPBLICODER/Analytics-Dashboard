@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://analytics-dashboard-c0x7.onrender.com/api",
 });
 
 // attach JWT if present
