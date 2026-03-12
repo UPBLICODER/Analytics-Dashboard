@@ -88,17 +88,17 @@ Run `npm run seed` in the backend folder. This generates:
 
 ---
 
-## Short Essay: Scaling for 1 Million Write Events per Minute
+### Short Essay: Scaling for 1 Million Write Events per Minute
 
-To handle 1 million write events per minute:
+If this dashboard needed to handle 1 million write events per minute, the backend would need to handle a large number of requests efficiently.  
 
-1. Introduce a **message queue** (Kafka or RabbitMQ) to buffer incoming track events, decoupling writes from the API.  
-2. Use a **write-optimized datastore** (Cassandra, DynamoDB, or a time-series database) partitioned/sharded by time or user.  
-3. Perform **batch writes or asynchronous ingestion** to reduce per-event overhead.  
-4. Maintain **pre-aggregated counts** in a fast key-value cache like Redis to serve analytics queries without scanning the entire clicks table.  
-5. Horizontally scale API servers behind a **load balancer** and ensure the database layer is clustered.  
+Some basic approaches would be:  
 
-> These measures smooth spike loads and ensure near-real-time analytics while keeping the API responsive.
+- Use multiple servers or a **load balancer** to handle high traffic.  
+- Store data in a **fast database** that can manage many writes at once.  
+- Use **caching** to quickly provide analytics without reading all the data every time.  
+
+> This ensures the dashboard remains responsive even with a lot of users.
 
 ---
 
