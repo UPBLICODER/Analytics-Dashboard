@@ -15,6 +15,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/track", trackRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
+app.get("/api/health",(re,res)=>{
+  res.send({"message":"Server running..."});
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
